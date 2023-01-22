@@ -5,7 +5,7 @@ b)mostrar la rsta de los dos numeros (1ro menos 2do)
 c)mostrar la multip licacion de los dos numeros
 """
 print(msg)
-#obtner inputs de sde teclado
+#obtner inputs desde teclado
 numeroOne=int(input("ingrese un valor: "))
 numeroTwo=int(input('ingrese segundo valor :'))
 opncionMenu=input('ingrese la opcion de menu: ')
