@@ -10,8 +10,8 @@ Seleciones 9 para la pregunta 9
 Seleciones 10 para la pregunta 10
 """
 
-Ctrl + D
+""" Ctrl + D
 
 Ctrl + Alt
-
+ """
 

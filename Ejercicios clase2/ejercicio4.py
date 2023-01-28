@@ -1,4 +1,25 @@
-#mini sistema de notas
+vLista=[10,23,45,'hello']
+vLista.append(2)            #agregamos el valor de 2 al final de la lista,array
+a=type(vLista[-1])
+
+if a==str:
+    print("el utlimo valor es str")
+else:
+    print("el elemnto no es str")
+
+
+print(list(vLista))      #imprimimos vLista como tipo lista[]
+
+
+
+
+
+
+
+
+
+
+""" #mini sistema de notas
 
 sistema={
     'nombreDeInstitucion':"Colegio N",
@@ -36,4 +57,4 @@ else:
     sistema['profesores']=sistema['profesores'].append(profesorPorAsignar)
     profesoresActuales=sistema['profesores']
 
-#asignar nota alumno
+#asignar nota alumno """
