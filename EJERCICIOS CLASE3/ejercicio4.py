@@ -1,20 +1,20 @@
 #clase es estructura y objeto instancia
-class Celular:      #para definir clase primero debemos definir una funcion
+class Celular:      #creamos el objeto Celular. Para definir clase primero debemos definir una funcion
     def __init__(self,marca,pantalla,imei,camara):  #funcion que inicializa clase cuando se convierta en objeto
-        self.marca=marca                            #self siempre se usa para hacer referencia a valor de una clases
-        self.pantalla=pantalla                      #poner objetos para que celular tenga identidad
-        self.imei=imei
-        self.camara=camara
-        self.activado=False
+        self.marca=marca                            #con self.xxx=xxx definimos las caracteristicas que tendra el objeto
+        self.pantalla=pantalla                      #self siempre se usa para hacer referencia a valor de una clases
+        self.imei=imei                              #poner objetos para que celular tenga identidad
+        self.camara=camara                          #creamos nuevo atributo del objeto
+        self.activado=False 
         self.apagado=True
         self.pantallaBloque=False
 
-    def __str__(self) -> str:   #los que tienen doble __ son privados, este permite crear def
+    def __str__(self) -> str:   #los que tienen doble __ son privados, definimos que sera de tipo string
         return f"el celular tiene los siguientes atributos{self.marca} , {self.pantalla} , {self.imei} , {self.camara} y su estado de activacion es {self.activado} "
-    
+        #usamos f para fstring con este podemos poner variables en texto a mostrar
     def sizeDisplay(self)->float:
         description=self.pantalla.split(sep='-')
-        return float(description[1])
+        return float(description[1])            #DEVUELVE valor de la funcion al programa principal
     
     def camaraFrontal(self)->float:
         camaraFrontal=self.camara.split(sep='-')
