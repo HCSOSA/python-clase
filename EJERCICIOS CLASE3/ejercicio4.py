@@ -13,7 +13,7 @@ class Celular:      #creamos el objeto Celular. Para definir clase primero debem
         return f"el celular tiene los siguientes atributos{self.marca} , {self.pantalla} , {self.imei} , {self.camara} y su estado de activacion es {self.activado} "
         #usamos f para fstring con este podemos poner variables en texto a mostrar
     def sizeDisplay(self)->float:
-        description=self.pantalla.split(sep='-')
+        description=self.pantalla.split(sep='-')    #devuelve lista con segmentos separados
         return float(description[1])            #DEVUELVE valor de la funcion al programa principal
     
     def camaraFrontal(self)->float:
