@@ -1,13 +1,17 @@
 import sys
+argumentosIngresados=sys.argv
+print(type(argumentosIngresados))
 
-def argumentosIngresados():
+def leerArgumentos(*args):
+    for arg in args:
+        print(arg)
+
     nombre_archivo=sys.argv[0]    #obtenemos el nombre del scrip del primer argunmento
     longitud_argumentos=len(sys.argv) #calculamos la longitud
     nombre_archivo=str(sys.argv)  #obtenemos la representacion como str de la lista
 
-    print('NOMBRE scrip: {}'.format(nombre_archivo))
-    print('CANTIDAD de argumentos: {}'.format(longitud_argumentos))
-    print('LISTA de argumentos: {}'.format(nombre_archivo))
+    print(f'NOMBRE scrip: {nombre_archivo}')
+    print(f'CANTIDAD de argumentos: {longitud_argumentos}')
+    print(f'LISTA de argumentos: {nombre_archivo}')
 
-
-argumentosIngresados()
+leerArgumentos(*argumentosIngresados)

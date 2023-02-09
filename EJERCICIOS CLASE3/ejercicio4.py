@@ -1,6 +1,6 @@
 #clase es estructura y objeto instancia
 class Celular:      #creamos el objeto Celular. Para definir clase primero debemos definir una funcion
-    def __init__(self,marca,pantalla,imei,camara):  #funcion que inicializa clase cuando se convierta en objeto
+    def __init__(self,marca,pantalla:float,imei,camara):  #funcion que inicializa clase cuando se convierta en objeto 
         self.marca=marca                            #con self.xxx=xxx definimos las caracteristicas que tendra el objeto
         self.pantalla=pantalla                      #self siempre se usa para hacer referencia a valor de una clases
         self.imei=imei                              #poner objetos para que celular tenga identidad
@@ -10,27 +10,28 @@ class Celular:      #creamos el objeto Celular. Para definir clase primero debem
         self.pantallaBloque=False
 
     def __str__(self) -> str:   #los que tienen doble __ son privados, definimos que sera de tipo string
-        return f"el celular tiene los siguientes atributos{self.marca} , {self.pantalla} , {self.imei} , {self.camara} y su estado de activacion es {self.activado} "
+                                #se usa ___str__ para poder escribir facilmente, con este metodo ya no debemos imprimir 1 por 1
+        return f"el celular tiene los siguientes atributos {self.marca} , {self.pantalla} , {self.imei} , {self.camara} y su estado de activacion es {self.activado} "
         #usamos f para fstring con este podemos poner variables en texto a mostrar
     def sizeDisplay(self)->float:
         description=self.pantalla.split(sep='-')    #devuelve lista con segmentos separados
         return float(description[1])            #DEVUELVE valor de la funcion al programa principal
     
     def camaraFrontal(self)->float:
-        camaraFrontal=self.camara.split(sep='-')
+        camaraFrontal=self.camara.split(sep=',')    #para poner separacion ','
         return camaraFrontal[0]
     
     def activar(self,name):           ##siempre usar self
         print(name) 
         self.activado=True
     
-    def estadoActivacion(self):
+    def estadoActivacion(self):         #lo usa asi ya que es un booleano
         if self.activado:
             return 'el celular esta activado'
         else:
             return 'el celular no se encuentra activado'
     
-    def estadoPantalla(self):
+    def estadoPantalla(self):              #c1 es el objeto,necesitamos la clase
         if self.apagado:
             print("el celular se encuentra apagado")
             return True
@@ -49,18 +50,18 @@ class Celular:      #creamos el objeto Celular. Para definir clase primero debem
 
 try:
 
-    c1=Celular('nokia','retina-6.4','chi20232410','8,4,3')
+    c1=Celular('nokia','retina-6.4','chi20232410','8,4,3')      ##OBJETO
     #print(c1)
-    a=c1.estadoActivacion()
+    a=c1.estadoActivacion()     #line28
     print(a)
-    c1.activar("gianmarco")
+    c1.activar("gianmarco")     #line24
     print(c1)
-    c1.estadoPantalla()
+    a=c1.estadoPantalla()
+    print(a)
     if a:
         print("el celular esta prendiendo")
         c1.prender()
     
-    c1.estadoPantalla()
 
 except Exception as e:
     print("error al crear los objetos celulares")
