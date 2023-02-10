@@ -10,18 +10,19 @@ class Celular:      #creamos el objeto Celular. Para definir clase primero debem
         self.pantallaBloque=False
 
     def __str__(self) -> str:   #los que tienen doble __ son privados, definimos que sera de tipo string
-                                #se usa ___str__ para poder escribir facilmente, con este metodo ya no debemos imprimir 1 por 1
+                                #se usa ___str__ para poder escribir facilmente,si no usamos nos aparecera codigos abstractos
         return f"el celular tiene los siguientes atributos {self.marca} , {self.pantalla} , {self.imei} , {self.camara} y su estado de activacion es {self.activado} "
         #usamos f para fstring con este podemos poner variables en texto a mostrar
-    def sizeDisplay(self)->float:
+
+    def sizeDisplay(self)->float:                   #PANTALLA
         description=self.pantalla.split(sep='-')    #devuelve lista con segmentos separados
-        return float(description[1])            #DEVUELVE valor de la funcion al programa principal
+        return float(description[1])                #DEVUELVE valor de la funcion al programa principal
     
-    def camaraFrontal(self)->float:
+    def camaraFrontal(self)->float:                 #CAMARA
         camaraFrontal=self.camara.split(sep=',')    #para poner separacion ','
         return camaraFrontal[0]
     
-    def activar(self,name):           ##siempre usar self
+    def activar(self,name):                         #siempre usar self
         print(name) 
         self.activado=True
     
@@ -31,7 +32,7 @@ class Celular:      #creamos el objeto Celular. Para definir clase primero debem
         else:
             return 'el celular no se encuentra activado'
     
-    def estadoPantalla(self):              #c1 es el objeto,necesitamos la clase
+    def estadoPantalla(self):                       #c1 es el objeto,necesitamos la clase
         if self.apagado:
             print("el celular se encuentra apagado")
             return True
@@ -48,21 +49,50 @@ class Celular:      #creamos el objeto Celular. Para definir clase primero debem
     def apagar(self):
         self.apagado=True 
 
+class Catalogo:
+    listCelulares=[]
+    def __init__(self,listaCelulares:list=[]):      #por defecto la lista siempre estara vacia   
+        self.listCelulares=listaCelulares
+    
+    def agregar(self,c):
+        self.listCelulares.append(c)
+    
+    def mostrarCatalogo(self):          
+        for i,c in enumerate(self.listCelulares):        #para tener mas orden usamor enumerate
+            i+=1
+            print(i,c)
+
 try:
 
     c1=Celular('nokia','retina-6.4','chi20232410','8,4,3')      ##OBJETO
+    c2=Celular('lg','hd-6.2','thai2023123','7,2,3')
     #print(c1)
     a=c1.estadoActivacion()     #line28
     print(a)
     c1.activar("gianmarco")     #line24
     print(c1)
-    a=c1.estadoPantalla()
+    a=c1.estadoPantalla()       #line34
     print(a)
+    
     if a:
         print("el celular esta prendiendo")
         c1.prender()
+    c1.estadoPantalla()
+
+#definimos una listad de objetos celulares    
+#    catalogo=[c1,c2]
+#    for i in catalogo:
+#        print(i)
+    catalogo=Catalogo()
+    catalogo.agregar(c1)
+    catalogo.agregar(c2)
+    catalogo.mostrarCatalogo()
+    
     
 
 except Exception as e:
     print("error al crear los objetos celulares")
     print(e)
+
+
+#2:00:00
