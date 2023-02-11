@@ -8,7 +8,7 @@ class Producto:
 
 
     def __str__(self)->str:
-        return f'El pais de origen es {self.nombre} y el numero de lote es {self.codigo}'
+        return f'El pais de origen es {self.nombre} y el numero de lote es {self.codigo}'       #cuando se usa return tenemos que agregar una variable
 
 #///////////////////////////////////////////////////////////
 
@@ -17,11 +17,12 @@ class Catalogo:
     def __init__(self,listaProductos:list=[]):      #por defecto la lista siempre estara vacia   
         self.listProductos=listaProductos
     
+
     def agregar(self,c):
         self.listProductos.append(c)
     #para enumerar
     def mostrarCatalogo(self):          
-        for i,c in enumerate(self.listProductos):        #para tener mas orden usamor enumerate
+        for i,c in enumerate(self.listProductos):        #para tener mas orden usamos enumerate
             i+=1
             print(i,c)    
 
@@ -30,8 +31,6 @@ class Catalogo:
 try:
     pro1=Producto('ARGENTINA','2315-2023')
     pro2=Producto('BRASIL','4523-2023')
-
-    print(pro1)
 
     catalogo=Catalogo()
     catalogo.agregar(pro1)
