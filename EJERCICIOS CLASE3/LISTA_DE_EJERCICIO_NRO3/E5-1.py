@@ -13,4 +13,4 @@ try:
     print(sumaRecursiva(n))
 
 except:
-        print('corrio un error')
+        print('ocurrio error')

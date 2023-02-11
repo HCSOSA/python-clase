@@ -1,4 +1,4 @@
-#clase es estructura y objeto instancia
+#CLASE es estructura y objeto instancia
 class Celular:      #creamos el objeto Celular. Para definir clase primero debemos definir una funcion
     def __init__(self,marca,pantalla:float,imei,camara):  #funcion que inicializa clase cuando se convierta en objeto 
 #ATRIBUTOS  Caracteristicas de objeto   
@@ -64,14 +64,16 @@ class Catalogo:
             print(i,c)
 
 try:
-
-    c1=Celular('nokia','retina-6.4','chi20232410','8,4,3')      ##OBJETO
+##OBJETO
+    c1=Celular('nokia','retina-6.4','chi20232410','8,4,3')      
     c2=Celular('lg','hd-6.2','thai2023123','7,2,3')
-    #print(c1)
+    
     a=c1.estadoActivacion()     #line28
     print(a)
+
     c1.activar("gianmarco")     #line24
     print(c1)
+
     a=c1.estadoPantalla()       #line34
     print(a)
     
@@ -80,20 +82,11 @@ try:
         c1.prender()
     c1.estadoPantalla()
 
-#definimos una listad de objetos celulares    
-#    catalogo=[c1,c2]
-#    for i in catalogo:
-#        print(i)
     catalogo=Catalogo()
     catalogo.agregar(c1)
     catalogo.agregar(c2)
     catalogo.mostrarCatalogo()
-    
-    
-
+        
 except Exception as e:
     print("error al crear los objetos celulares")
     print(e)
-
-
-#2:00:00

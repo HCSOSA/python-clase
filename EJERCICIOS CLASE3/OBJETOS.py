@@ -11,19 +11,19 @@ acciones,metodos	caminar,correr,levantarse,dormir"""
 
 #////////////////////////////////////////////////////////////////////
 
-class Humano:                                #CLASE
+class Humano:                           #CLASE
     def __init__(self,edad):                    
-        self.edad=edad                       #ATRIBUTO  
+        self.edad=edad                  #ATRIBUTO  
 
-    def hablar(self,mensaje):                #METODO
+    def hablar(self,mensaje):           #METODO
         print(mensaje)                      
 
-Pedro=Humano(26)  #OBJETO
+Pedro=Humano(26)                        #OBJETO
 Raul=Humano(21)   #creamos objeto que tiene como plantilla a clase humano
 #podra acceder a todos los metodos y atributos que tenga dentro de objeto
 
 print(f'Soy Raul y tengo {Raul.edad}')
 print(f'Soy Pedro y tengo {Pedro.edad}')
 
-Pedro.hablar('Hola')        #
-Raul.hablar('hola,Pedro!')  #
+Pedro.hablar('Hola')        
+Raul.hablar('hola,Pedro!')  
