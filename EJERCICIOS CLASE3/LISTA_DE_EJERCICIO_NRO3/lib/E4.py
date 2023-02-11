@@ -5,26 +5,24 @@
  identificar el país  de origen , el numero de lote """
 
 class Producto:
-    def __init__(self,nombre,codigo):
+    def __init__(self,nombre,codigo,stock):
         self.nombre=nombre
         self.codigo=codigo
-        self.stock=False
-    
+        self.stock=True
+        #self.año=año
+    def __str__(self)->str:
+        return f'El pais de origen es {self.nombre}, el numero de lote {self.codigo}'
 
     def disponible(self,name):
         print(name)
-        self.stock=True
+        self.stock=False
     
     def estadoStock(self):
         if self.stock:
-            return 'el producto tiene stock'
+            return 'el producto tiene stock en estos paises'
         else:
             return 'el producto no tiene stock'
-
-    def __str__(self)->str:
-        return f'El pais de origen es {self.nombre} y el numero de lote {self.codigo}'
-
-
+   
 class Catalogo:
     listProductos=[]
     def __init__(self,listaProductos:list=[]):
@@ -34,15 +32,26 @@ class Catalogo:
         self.listProductos.append(p)
 
     def mostrarCatalogo(self):          
-        for i,p in enumerate(self.listProductos):        #para tener mas orden usamor enumerate
+        for i,p in enumerate(self.listProductos):        #para tener mas orden usamos enumerate
             i+=1
             print(i,p)
 
 try:
-    p1=Producto('PERU','2410','2023')
+    p1=Producto('PR','2410','2001')
+    p2=Producto('BR','0708','2003')
+    p3=Producto('EEUU','1012','2012')
 
     a=p1.estadoStock()
     print(a)
+
+    print(p3)
+    
+    #agregamos variables a catalogo
+    catalogo=Catalogo()
+    catalogo.agregar(p1)
+    catalogo.agregar(p2)
+    catalogo.agregar(p3)
+    catalogo.mostrarCatalogo()
 
 
 except Exception as e:
